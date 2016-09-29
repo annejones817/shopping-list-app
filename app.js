@@ -38,17 +38,22 @@ $(document).ready(function(){
 	///////Check/Uncheck Item
 	var checkUncheck = function(state, element) {
 		element.closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
-	}
+		if (element.closest('li').find('.shopping-item').hasClass('shopping-item__checked')) {
+			element.text('uncheck'); 
+		}	
+		else {element.text('check')}
+
+	};
 
 	///////Remove Deleted Item
 	var removeDeletedItem = function(state, element) {
 		element.closest('li').remove();
-	}
+	};
 
 	///////Reset Input Field
 	var resetInput = function(state, element) {
 		element.val(null);
-	}
+	};
 
 	//Event Listeners
 	////////"Add Item" Submission
